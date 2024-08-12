@@ -1,0 +1,33 @@
+.gradient-background {
+  background: linear-gradient(300deg, #001f3f, #005f6b, #1a1a2e);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.nav-pills .nav-link {
+  color: var(--bs-info) !important; /* Default color for nav links */
+}
+
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link:focus {
+  color: var(--bs-info) !important; /* Hover and focus color */
+}
+
+.nav-pills .nav-link.active {
+  color: #ffffff !important; /* Color for the active nav link */
+  background-color: var(--bs-info) !important; /* Background for the active nav link */
+}
+
