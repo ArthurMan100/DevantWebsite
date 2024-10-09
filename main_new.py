@@ -8,19 +8,6 @@ from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 
-# Google Sheets setup
-scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('devant-website-432312-bcc8df08d7b0.json', scope)
-client = gspread.authorize(creds)
-sheet = client.open('Devant Orders')
-worksheet = sheet.sheet1
-
-# Email setup
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
-SENDER_EMAIL = "arthgeorgeson@gmail.com"  # Replace with your Gmail address
-SENDER_PASSWORD = "cnvk aysv gqli sxes"
-  # Replace with your Gmail password
 
 def send_email(to_email, subject, content):
     msg = MIMEMultipart()
