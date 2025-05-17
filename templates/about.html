@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .carousel-item img {
+            height: 900px;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            max-height: 100%;
+        }
+
+        .carousel-caption {
+            color: white;
+        }
+
+        .carousel-caption h1,
+        .carousel-caption p {
+            color: white;
+        }
+
+        .carousel-caption h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+
+        .carousel-caption .caption-bg {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .bd-placeholder-img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .carousel-container {
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        @media (min-width: 992px) {
+            .carousel-row {
+                display: flex;
+                justify-content: space-between;
+            }
+            .carousel-container {
+                flex: 0 0 48%;
+            }
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+            padding-bottom: 20px;
+        }
+
+        footer {
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+{% include "header.html" %}
+
+<!-- Two Carousels Side by Side -->
+<div class="container">
+    <div class="carousel-row">
+        <!-- First Carousel -->
+        <!-- First Carousel -->
+<div class="col-lg-6 carousel-container">
+    <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- New Placeholder Carousel Item -->
+            <div class="carousel-item active">
+                <a href="/checkout">
+                    <!-- Placeholder for new image -->
+                    <img src="/static/assets/img/IMG-20241027-WA0014-Photoroom.png" alt="New Slide" class="d-block w-100">
+                </a>
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <div class="caption-bg">
+                            <h1>Ginger and Free.</h1>
+                            <p class="opacity-75">Hand printed by the vessel himself.</p>
+                            <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Existing Carousel Item 1 (now second) -->
+            <div class="carousel-item">
+                <a href="/checkout">
+                    <img src="https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/gingerwhite4-Photoroom.png?raw=true" alt="Printing" class="d-block w-100">
+                </a>
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <div class="caption-bg">
+                            <h1>Ginger and Free.</h1>
+                            <p class="opacity-75">Hand printed by the vessel himself <br> The gentleman displayed, is wearing a Large and is 6ft.</p>
+                            <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Existing Carousel Item 2 (now third) -->
+            <div class="carousel-item">
+                <a href="/checkout">
+                    <img src="https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/gingercloseup.jpg?raw=true" alt="Printing2" class="d-block w-100">
+                </a>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="caption-bg">
+                            <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Existing Carousel Item 3 (now fourth) -->
+            <div class="carousel-item">
+                <a href="/checkout">
+                    <img src="https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/gingerwhite2-Photoroom%20(1).png?raw=true" alt="Screen Printing" class="d-block w-100">
+                </a>
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <div class="caption-bg">
+                            <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+        <!-- Second Carousel -->
+<div class="col-lg-6 carousel-container">
+            <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="/checkout">
+                            <img src="https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/lovelifeblack-Photoroom.png?raw=true" alt="Printing" class="d-block w-100">
+                        </a>
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <div class="caption-bg">
+                                    <h1>Work, Love Life, Miscellaneous.</h1>
+                                    <p class="opacity-75">Hand printed by the vessel himself <br>
+                                    The gentleman displayed, is wearing a Large and is 6ft.  </p>
+                                    <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/checkout">
+                            <img src="https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/IMG_2053.jpg?raw=true" alt="Printing2" class="d-block w-100">
+                        </a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <div class="caption-bg">
+                                    <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/checkout">
+                            <img src="/static/assets/img/IMG-20241027-WA0009.png" alt="Screen Printing" class="d-block w-100">
+                        </a>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <div class="caption-bg">
+                                    <p><a class="btn btn-lg btn-primary" href="/checkout">Pricing & Sizing</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+
+{% include "footer.html" %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
