@@ -5,9 +5,26 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 
+# Google Sheets setup
+scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name('devant-website-432312-bcc8df08d7b0.json', scope)
+client = gspread.authorize(creds)
+sheet = client.open('Devant Orders')
+worksheet = sheet.sheet1
+
+# Email setup
+SMTP_SERVER = os.getenv('SMTP_SERVER')
+SMTP_PORT = int(os.getenv('SMTP_PORT', 587))  # Default to 587 if not set 
+SENDER_EMAIL = os.getenv('SENDER_EMAIL')
+SENDER_PASSWORD = os.getenv('SENDER_PASSWORD')
+  # Replace with your Gmail password
+
+PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
 
 def send_email(to_email, subject, content):
     msg = MIMEMultipart()
@@ -36,7 +53,7 @@ def index():
 
 @app.route('/checkout')
 def checkout():
-    return render_template("checkout.html")
+    return render_template("checkout.html",paypal_client_id = PAYPAL_CLIENT_ID)
 
 @app.route('/thanks')
 def thanks():
