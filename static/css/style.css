@@ -31,3 +31,71 @@
   background-color: var(--bs-info) !important; /* Background for the active nav link */
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.btn.btn-primary {
+    color: black; /* Changes the text color */
+    background-color: var(--bs-info) !important; /* Changes the background color */
+    border-color: var(--bs-info) !important; /* Changes the border color */
+}
+
+/* Custom styling for the navigation links */
+.nav-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+     /* Adds margin between the nav items */
+}
+
+.nav-link:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+/* Ensuring the header links are also styled correctly */
+header a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+header a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+.gradient-background {
+    padding-bottom: 0 !important; /* Remove bottom padding */
+    margin-bottom: 0 !important;  /* Remove bottom margin */
+}
+
+.container.px-5 img.img-fluid {
+    margin-top: -50px; /* Adjust based on your design to move it upwards */
+}
+
+.overflow-hidden {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+    .glowing-title {
+        color: #fff;
+        text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 40px #0077cc;
+        font-family: 'Century Gothic', sans-serif;
+        animation: blue-glow 1.5s infinite alternate;
+    }
+
+    @keyframes blue-glow {
+        0% {
+            text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 40px #0077cc;
+        }
+        100% {
+            text-shadow: 0 0 10px #33ccff, 0 0 20px #33ccff, 0 0 40px #33ccff, 0 0 80px #0077cc;
+        }
+    }
