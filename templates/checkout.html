@@ -22,8 +22,62 @@
             text-align: center;
             margin-top: 10px;
         }
+      .fixed-cart {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(90deg, #0a0a0a, #1a1a1a);
+        padding: 15px;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .cart-toggle {
+        position: fixed;
+        bottom: 100%;
+        right: 20px;
+        background: #0d6efd;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px 5px 0 0;
+        cursor: pointer;
+    }
+
+    .cart-content {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    /* Add padding to main content to prevent cart overlap */
+    main {
+        padding-bottom: 400px;
+    }
+
+    /* Style scrollbar for cart content */
+    .cart-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .cart-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .cart-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .cart-content::-webkit-scrollbar-thumb:hover {
+        background: #555;}
     </style>
-    <script src="https://www.paypal.com/sdk/js?client-id=AbzO2yhzwaXZG90ZHwkoUSwmmUAv14vh_dnQCMivxDbEck_0DuvIlodOWbvBgmNCmLmpp7tz5khEYceA&currency=GBP"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AaNX2rgoobFu-XwrA6vq0fNfOE5Zd4rDRdct70DEyz8MLL_I7KdCoO24CgbQwmzleqcaE2NGkurTCqY6&currency=GBP"></script>
 </head>
 <body class="bg-body-tertiary">
 {% include "header.html" %}
@@ -33,6 +87,80 @@
 
     <h3 class="display-4" style="text-align: center; margin-bottom: 2rem; margin-top:40px;">Select Product and Quantity</h3>
     <br>
+
+      <!-- Pimlico T-Shirt Section -->
+<div class="row align-items-center mb-5">
+  <!-- Dropdown Column -->
+  <div class="col-md-6 text-center">
+    <div class="d-flex flex-column align-items-center">
+      <label class="form-check-label mb-2 fs-5" for="quantity-pimlico-l">Pimlico T Shirt - Large</label>
+      <select class="form-select form-select-sm product-quantity fs-5 mb-4" id="quantity-pimlico-l" data-price="24.99" aria-label="Quantity for Pimlico T Shirt - Large" style="width: 250px;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label class="form-check-label mb-2 fs-5" for="quantity-pimlico-xl">Pimlico T Shirt - XL</label>
+      <select class="form-select form-select-sm product-quantity fs-5" id="quantity-pimlico-xl" data-price="24.99" aria-label="Quantity for Pimlico T Shirt - XL" style="width: 250px;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+<br>
+       <label class="form-check-label mb-2 fs-5" for="quantity-pimlico-l">White Pimlico T Shirt - Large</label>
+      <select class="form-select form-select-sm product-quantity fs-5 mb-4" id="quantity-pimlico-white-l" data-price="24.99" aria-label="Quantity for Pimlico T Shirt - Large" style="width: 250px;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    <br>
+       <label class="form-check-label mb-2 fs-5" for="quantity-pimlico-l">White Pimlico T Shirt - X-Large</label>
+      <select class="form-select form-select-sm product-quantity fs-5 mb-4" id="quantity-pimlico-white-xl" data-price="24.99" aria-label="Quantity for Pimlico T Shirt - Large" style="width: 250px;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <br>
+       <label class="form-check-label mb-2 fs-5" for="quantity-pimlico-l">White Pimlico T Shirt - XX-Large</label>
+      <select class="form-select form-select-sm product-quantity fs-5 mb-4" id="quantity-pimlico-white-xxl" data-price="24.99" aria-label="Quantity for Pimlico T Shirt - Large" style="width: 250px;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+
+
+    </div>
+  </div>
+
+  <!-- Image Column -->
+  <div class="col-md-6 text-center">
+    <img src="static/assets/img/pimlico-t-shirt.jpg" class="img-fluid" alt="Pimlico T Shirt" style="width: 80%; max-width: 300px; height: auto;">
+    <div class="product-info mt-3">
+      <p class="fw-bold" style="font-size: 1.5rem;">Pimlico <br> T Shirt</p>
+      <p style="font-size: 1.5rem;">Price: £24.99</p>
+      <p style="font-size: 1.5rem;"><strong>Sizes:</strong> <br> Large <br> X-Large</p>
+    </div>
+  </div>
+</div>
+<br>
+    <hr>
 
     <div class="container-fluid">
       <div class="row">
@@ -134,7 +262,9 @@
       </div>
     </div>
 
-<hr class="my-4">
+
+
+      <hr class="my-4">
     <!-- Separate Container for New Poster -->
     <div class="container-fluid mt-5">
       <div class="row align-items-center">
@@ -154,7 +284,7 @@
             <img src="static/assets/img/poster2.jpg" class="poster-image" alt="Miscellaneous Ltd Edition Four Colour Poster" style="width: 80%; max-width: 300px; height: auto;">
           </a>
           <div class="product-info mt-3">
-            <p class="fw-bold" style="font-size: 1.5rem;">Miscellaneous Ltd Edition <br>Four Colour Poster</p>
+            <p class="fw-bold" style="font-size: 1.5rem;">Miscellaneous Ltd Edition <br>Four Colour A1 Poster</p>
             <p style="font-size: 1.5rem;">Price: £100</p>
           </div>
         </div>
@@ -209,31 +339,59 @@
   </div>
 </div>
 
-    <hr class="my-4">
-    <br>
 
-    <div class="row g-5">
-      <div class="col-md-12">
-        <div class="cart-section">
-          <h4 class="d-flex justify-content-between align-items-center mb-3 fs-4">
-            <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill" id="cart-count">0</span>
-          </h4>
-          <ul class="list-group mb-3" id="cart-items">
-            <!-- Cart items will be dynamically inserted here -->
-          </ul>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Shipping Fee (GBP)</span>
-            <strong id="shipping-fee">£3.00</strong>  <!-- This will always be £3 -->
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (GBP)</span>
-            <strong id="cart-total">£0.00</strong>
-          </li>
-          <div id="paypal-button-container"></div>
+     <!-- New Book -->
+    <hr class="my-4">
+    <!-- Separate Container for New Poster -->
+    <div class="container-fluid mt-5">
+      <div class="row align-items-center">
+        <!-- Dropdown Column -->
+        <div class="col-md-6 text-center">
+          <div class="d-flex flex-column align-items-center">
+            <label class="form-check-label mb-2 fs-5" for="quantity-misc-poster">Magic Book</label>
+            <select class="form-select form-select-sm product-quantity fs-5" id="book" data-price="30" aria-label="Quantity for Miscellaneous Ltd Edition Four Colour Poster" style="width: 250px;">
+              <option value="0">0</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+        </div>
+        <!-- Image Column -->
+        <div class="col-md-6 text-center">
+            <img src="static/assets/img/book2.jpg" class="book-image" alt="book" style="width: 80%; max-width: 300px; height: auto;">
+          </a>
+          <div class="product-info mt-3">
+            <p class="fw-bold" style="font-size: 1.5rem;">Magic Book </p>
+            <p style="font-size: 1.5rem;">Price: £30</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <br>
+
+    <div class="fixed-cart">
+    <button class="cart-toggle" onclick="toggleCart()">Toggle Cart</button>
+    <div class="cart-wrapper">
+        <div class="cart-content">
+            <h4 class="d-flex justify-content-between align-items-center mb-3 fs-4">
+                <span class="text-primary">Your cart</span>
+                <span class="badge bg-primary rounded-pill" id="cart-count">0</span>
+            </h4>
+            <ul class="list-group mb-3" id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </ul>
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Shipping Fee (GBP)</span>
+                <strong id="shipping-fee">£3.00</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (GBP)</span>
+                <strong id="cart-total">£0.00</strong>
+            </li>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+</div>
   </main>
 
   {% include "footer.html" %}
@@ -241,14 +399,19 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+function toggleCart() {
+  const cartContent = document.querySelector('.cart-content');
+  cartContent.style.display = cartContent.style.display === 'none' ? 'block' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   const quantities = document.querySelectorAll('.product-quantity');
   const cartItems = document.getElementById('cart-items');
   const cartCount = document.getElementById('cart-count');
   const cartTotal = document.getElementById('cart-total');
 
-  const standardShippingFee = 3.00;  // Standard £3 shipping fee
-  const posterShippingFee = 9.00;    // £9 shipping fee when poster is included
+  const standardShippingFee = 3.00;
+  const posterShippingFee = 9.00;
 
   quantities.forEach(quantity => {
     quantity.addEventListener('change', updateCart);
@@ -261,24 +424,21 @@ document.addEventListener('DOMContentLoaded', function() {
     let includesPoster = false;
 
     quantities.forEach(quantity => {
-      const qty = quantity.value;
+      const qty = parseInt(quantity.value);
       if (qty > 0) {
-        const price = quantity.getAttribute('data-price');
+        const price = parseFloat(quantity.getAttribute('data-price'));
         const itemTotal = qty * price;
-        totalCount += parseInt(qty);
+        totalCount += qty;
         totalPrice += itemTotal;
 
         const item = document.createElement('li');
         item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-sm');
         const itemName = quantity.previousElementSibling.innerText;
 
-        // Check if any poster is included - UPDATED LOGIC
-        if (itemName.includes('Poster') ||
-            itemName.includes('Miscellaneous Ltd Edition Four Colour Poster')) {
+        if (itemName.includes('Poster') || itemName.includes('Miscellaneous Ltd Edition Four Colour Poster')) {
           includesPoster = true;
         }
 
-        // Image paths with correct URLs
         let productImage = '';
         if (itemName.includes('Ginger White T Shirt')) {
           productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/tshirt_1.png';
@@ -288,6 +448,10 @@ document.addEventListener('DOMContentLoaded', function() {
           productImage = 'static/assets/img/poster.jpg';
         } else if (itemName.includes('Miscellaneous Ltd Edition Four Colour Poster')) {
           productImage = 'static/assets/img/poster2.jpg';
+        } else if (itemName.includes('Magic Book')) {
+          productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/book3.jpg';
+        } else if (itemName.includes('Pimlico T Shirt')) {
+          productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/pimlico-t-shirt.jpg';
         }
 
         item.innerHTML = `
@@ -304,19 +468,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Set shipping fee based on whether any poster is included
     const shippingFee = includesPoster ? posterShippingFee : standardShippingFee;
-
-    // Update cart total with the selected shipping fee
     cartCount.innerText = totalCount;
     cartTotal.innerText = `£${(totalPrice + shippingFee).toFixed(2)}`;
-
-    // Update the displayed shipping fee
     document.getElementById('shipping-fee').innerText = `£${shippingFee.toFixed(2)}`;
   }
 
   paypal.Buttons({
-    createOrder: function(data, actions) {
+    createOrder: function (data, actions) {
       const items = getSelectedItems();
       const includesPoster = items.some(item => item.name.includes('Poster'));
       const shippingFee = includesPoster ? posterShippingFee : standardShippingFee;
@@ -352,8 +511,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }]
       });
     },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
+    onApprove: function (data, actions) {
+      return actions.order.capture().then(function (details) {
         const buyerInfo = {
           name: details.payer.name.given_name + " " + details.payer.name.surname,
           email: details.payer.email_address,
@@ -385,12 +544,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function getSelectedItems() {
     const selectedItems = [];
     quantities.forEach(quantity => {
-      const qty = quantity.value;
+      const qty = parseInt(quantity.value);
       if (qty > 0) {
         const itemName = quantity.previousElementSibling.innerText;
         let productImage = '';
 
-        // Image paths with correct URLs
         if (itemName.includes('Ginger White T Shirt')) {
           productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/tshirt_1.png';
         } else if (itemName.includes('Love Life Misc. Black T Shirt')) {
@@ -399,6 +557,10 @@ document.addEventListener('DOMContentLoaded', function() {
           productImage = 'https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/poster_image.jpg';
         } else if (itemName.includes('Miscellaneous Ltd Edition Four Colour Poster')) {
           productImage = 'https://github.com/ArthurMan100/DevantWebsite/blob/main/static/assets/img/poster2.jpg';
+        } else if (itemName.includes('Magic Book')) {
+          productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/book3.jpg';
+        } else if (itemName.includes('Pimlico T Shirt')) {
+          productImage = 'https://raw.githubusercontent.com/ArthurMan100/DevantWebsite/main/static/assets/img/pimlico-t-shirt.jpg';
         }
 
         selectedItems.push({
